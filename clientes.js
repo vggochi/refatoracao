@@ -219,12 +219,13 @@ router.get('/carrinho', async (req, res, next) => {
             .from('carrinho')
             .select(`
                 *,
-                produtos (
-                    id, 
-                    nome, 
-                    preco, 
-                    imagem_url
-                )
+                 produtos (
+    id,
+    nome,
+    preco,
+    imagem_url,
+    imagem
+)
             `)
             .eq('cliente_id', decoded.id);
         

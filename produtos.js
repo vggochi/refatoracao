@@ -9,9 +9,9 @@ const supabase = require('./supabase');
 router.get('/', async (req, res, next) => {
     try {
         const { data, error } = await supabase
-            .from('produtos')
-            .select('*')
-            .order('criado_em', { ascending: false });
+    .from('produtos')
+    .select('*')
+    .order('created_at', { ascending: false });
 
         if (error) {
             throw error;
